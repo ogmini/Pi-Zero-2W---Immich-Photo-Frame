@@ -48,6 +48,38 @@ I can probably remove some of these permissions.
 I followed the docker installation instructions found at [https://docs.immichkiosk.app/installation/#docker-recommended](https://docs.immichkiosk.app/installation/#docker-recommended) doing Option 1 and adding to my existing compose stack.
 
 ### DietPi
+I followed the installation instrructions from DietPi with the following changes to the config.txt file in the install files.
+
+```
+hdmi_force_hotplug=1 
+config_hdmi_boost=10
+hdmi_group=2 
+hdmi_mode=87 
+hdmi_cvt 1024 600 60 6 0 0 0
+```
+
+Using dietpi-software, I installd the following:
+- LXDE
+- OpenSSH
+- Chromium
+
+I installed Tailscale seperately
+
+```bash
+curl -fsSL https://tailscale.com/install.sh | sh
+sudo tailscale up
+```
+
+#### Configuration File Changes
+
+##### /boot/dietpi.txt
+I would encourage you to read this over and make appropriate changes. I changed the following:
+```
+SOFTWARE_CHROMIUM_RES_X=1024
+SOFTWARE_CHROMIUM_RES_Y=600
+```
+
+
 
 ### Tailscale
 
