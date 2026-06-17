@@ -78,9 +78,9 @@ I would encourage you to read this over and make appropriate changes. I changed 
 SOFTWARE_CHROMIUM_RES_X=1024
 SOFTWARE_CHROMIUM_RES_Y=600
 ```
+##### Chromium Autostart
+
+##### CRON Jobs
 
 
 
-### Tailscale
-
-### Chromium Autostart
