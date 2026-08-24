@@ -80,7 +80,51 @@ SOFTWARE_CHROMIUM_RES_Y=600
 ```
 ##### Chromium Autostart
 
+kiosk-autostart.sh
+
+``` sh
+#!/bin/bash
+if pgrep "chromium" > /dev/null
+then
+  echo "already running"
+else
+  echo "not running"
+  if [[ "DISPLAY" = ":0.0" ]]
+  then
+    echo "Launch"
+    chromium --disable-gpu --no-memcheck --start-fulscreen
+  else
+    echo "Nope"
+  fi
+fi
+```
+
 ##### CRON Jobs
+Edit /etc/crontab
+
+```
+0 22 * * * root /monitor-off.sh
+0 8 * * * root /monitor-on.sh
+```
+
+monitor-on.sh
+
+``` sh
+#!/bin/sh
+
+xset -display :0 s reset
+xset -display :0 s noblank
+```
+
+monitor-off.sh
+
+``` sh
+#!/bin/sh
+
+xset -display :0 s blank
+xset -display :0 s reset
+xset -display :0 s activate
+```
 
 
 
