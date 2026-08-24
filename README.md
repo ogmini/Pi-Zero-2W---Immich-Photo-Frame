@@ -80,6 +80,8 @@ SOFTWARE_CHROMIUM_RES_Y=600
 ```
 ##### Chromium Autostart
 
+/var/lib/dietpi/dietpi-software/installed/chromium-autostart.sh
+
 kiosk-autostart.sh
 
 ``` sh
